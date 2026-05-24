@@ -5,12 +5,14 @@ using namespace std;
 
 int main() {
     ifstream archivoEntrada("input/ArchivoEntrada.txt");
-    if (archivoEntrada.is_open()) {
+    ofstream archivoSalida ("output/archivoSalida.txt");
+    if (archivoEntrada.is_open()&& archivoSalida.isopen()) {
         cout << "Archivo abierto" << endl;
         string linea;
         while (getline(archivoEntrada, linea)) {
-            cout << linea << endl;
+           archivoSalida<<linea;
         }
+        cout << "Archivo copiado exitosamente"<<endl;
     }
     return 0;
 }
